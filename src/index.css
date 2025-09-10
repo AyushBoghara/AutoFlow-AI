@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Brand background and global resets */
+:root {
+  --bg-start: #0b1020; /* Deep Blue */
+  --bg-end: #1f1147;   /* Deep Purple */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 80% 10%, rgba(99,102,241,0.20), transparent 50%),
+              radial-gradient(1000px 600px at 10% 20%, rgba(168,85,247,0.18), transparent 60%),
+              linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none !important;
+  }
+}
+
+/* Global focus-visible fallback (Tailwind rings are preferred in components) */
+:focus-visible {
+  outline: 2px solid rgb(129 140 248); /* indigo-400 */
+  outline-offset: 2px;
+}
+
+/* UI utility classes for consistent sections, cards, typography, and actions */
+.ui-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+.ui-section { @apply space-y-6; }
+
+/* Surfaces */
+.ui-card { @apply rounded-2xl border border-white/10 bg-white/5 p-6; }
+.ui-card-hover { @apply hover:bg-white/10 transition-colors; }
+.ui-surface { @apply bg-white/5 border border-white/10; }
+
+/* Typography */
+.ui-heading-1 { @apply text-4xl sm:text-5xl font-extrabold; }
+.ui-heading-2 { @apply text-2xl font-bold; }
+.ui-heading-3 { @apply text-lg font-semibold; }
+.ui-subtitle { @apply text-white/80; }
+
+/* Layout helpers */
+.ui-grid-cards { @apply grid gap-6 md:grid-cols-2 xl:grid-cols-3; }
+
+/* Badges & tags */
+.ui-badge { @apply px-2.5 py-1 rounded-full bg-white/10 border border-white/10 text-xs text-white/80; }
+
+/* Buttons */
+.ui-button-primary { @apply inline-flex bg-indigo-500 hover:bg-indigo-400 text-white font-medium px-6 py-3 rounded-xl transition-colors; }
+.ui-button-ghost { @apply inline-flex bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3 rounded-xl transition-colors; }
+
+/* CTA band */
+.ui-cta { @apply rounded-2xl border border-white/10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-center; }
