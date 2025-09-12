@@ -1,4 +1,4 @@
-# AutoFlow AI
+ # AutoFlow AI
 
 A modern, responsive single-page website for an AI automation agency, built with React + Vite, React Router, and Tailwind CSS (via @tailwindcss/postcss). The project demonstrates clean architecture, accessible UI patterns, and a scalable page structure suitable for marketing sites or lightweight apps.
 
@@ -117,4 +117,3 @@ No license file is currently provided. All rights reserved by default. If you in
 - Accessibility: The layout includes a skip link, focus-visible styles, and keyboard-friendly navigation. Maintain these patterns when adding new components.
 - Performance: Favor static content, defer heavy logic, and keep images optimized. Tailwind utility classes help create minimal CSS.
 - Extensibility: You can integrate forms, analytics, or a headless CMS. Keep routes and UI utilities organized to scale comfortably.
-# AutoFlow-AI
